@@ -9,6 +9,7 @@ This is the ordered list of tasks to build v1. Agents pick tasks from the top of
 ## Phase 0: Project setup
 
 ### T0.1 — Initialize repo
+@claimed: cowork-claude 2026-04-27T06:53:56Z
 - Create Next.js 15 app with App Router and TypeScript strict mode
 - Configure Tailwind CSS
 - Install and initialize shadcn/ui with a neutral base palette
