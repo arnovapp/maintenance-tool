@@ -15,7 +15,7 @@ This is the ordered list of tasks to build v1. Agents pick tasks from the top of
 - Set up ESLint, Prettier, Husky, lint-staged
 - Configure `tsconfig.json` with strict settings and path aliases (`@/*`)
 - Create folder structure per `CLAUDE.md`
-- Add `.gitignore`, `.env.example`, `LICENSE` (MIT or unlicensed — human decides)
+- Add `.gitignore`, `.env.example`, `LICENSE` (proprietary, all rights reserved)
 - First commit: `chore: initialize Next.js project`
 
 **Acceptance:** `pnpm dev` runs a blank page with no errors. `pnpm lint` and `pnpm typecheck` both pass.
