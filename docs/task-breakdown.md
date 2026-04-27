@@ -22,6 +22,7 @@ This is the ordered list of tasks to build v1. Agents pick tasks from the top of
 **Acceptance:** `pnpm dev` runs a blank page with no errors. `pnpm lint` and `pnpm typecheck` both pass.
 
 ### T0.2 — Set up Supabase
+@claimed: cowork-claude 2026-04-27T07:10:33Z
 - Create a new Supabase project (human does this, agent documents the process)
 - Install `@supabase/supabase-js` and `@supabase/ssr`
 - Configure client helpers for server and browser components
