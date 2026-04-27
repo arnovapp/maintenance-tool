@@ -56,6 +56,7 @@ Create the initial tables per `docs/prd.md` section 5:
 **Acceptance:** Migration applies cleanly. Types are generated and compile. Seed script populates dev environment.
 
 ### T0.4 — App shell and navigation
+@claimed: cowork-claude 2026-04-27T07:05:55Z
 - Implement persistent top nav per `docs/design-guide.md`
 - Routes: `/` (home), `/searches`, `/equipment`, `/vendors`, `/drafts`
 - Each route shows a placeholder until its real implementation lands

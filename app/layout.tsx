@@ -1,4 +1,10 @@
 import type { Metadata } from "next";
+
+import { CmdKListener } from "@/components/features/keyboard/cmd-k-listener";
+import { TopNav } from "@/components/features/nav/top-nav";
+import { ThemeProvider } from "@/components/features/theme/theme-provider";
+import { ThemeScript } from "@/components/features/theme/theme-script";
+
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -11,11 +17,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Dark mode is the default per docs/design-guide.md.
-  // T0.4 will introduce the light/dark toggle and persist the user's choice.
+  // The `dark` class is applied by `<ThemeScript />` before paint,
+  // so the SSR markup omits it and `suppressHydrationWarning` prevents
+  // the unavoidable html-attr mismatch warning. See design-guide:
+  // "Dark mode is the default."
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
-      <body className="bg-background text-foreground font-sans antialiased">{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <ThemeScript />
+      </head>
+      <body className="bg-background text-foreground min-h-screen font-sans antialiased">
+        <ThemeProvider>
+          <CmdKListener />
+          <TopNav />
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
