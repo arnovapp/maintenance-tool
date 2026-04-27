@@ -51,3 +51,17 @@ Format:
 **Alternatives considered:** Remix, SvelteKit, Firebase, self-hosted Postgres, OpenAI API.
 **Rationale:** Stack is what the chosen agents (Claude Code, Cowork/Dispatch) handle most smoothly. It's also the stack the user's Arnova work is likely to use, making cross-project consistency easier.
 **Revisit when:** A concrete need emerges that the stack can't handle.
+
+## 2026-04-26 — License: proprietary, all rights reserved
+**Context:** v1 is a private personal tool that may productize at the 90-day mark.
+**Decision:** Proprietary license with explicit "all rights reserved" notice in LICENSE file.
+**Alternatives considered:** MIT (too permissive, complicates future commercialization), no LICENSE file (same legal effect but ambiguous).
+**Rationale:** Keeps commercialization options open; explicit beats implicit.
+**Revisit when:** 90-day productization decision, or if open-sourcing is ever considered.
+
+## 2026-04-26 — Default model: Claude Sonnet 4.6
+**Context:** CLAUDE.md needed a concrete default model for Vercel AI SDK calls.
+**Decision:** claude-sonnet-4-6 as the default.
+**Alternatives considered:** claude-opus-4-7 (overkill and more expensive for v1 search/draft tasks).
+**Rationale:** Sonnet 4.6 is the current generation, fast enough for streaming UI, cost-appropriate for v1.
+**Revisit when:** A specific task needs more capability or cheaper cost.

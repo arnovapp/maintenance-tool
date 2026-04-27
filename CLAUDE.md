@@ -24,7 +24,7 @@ The user is not a full-time developer. He directs the work, reviews PRs, and use
 - **Framework:** Next.js 15, App Router, TypeScript strict
 - **Styling:** Tailwind CSS. Use `shadcn/ui` for primitives. Don't install component libraries beyond shadcn without approval.
 - **Database:** Supabase. Use the typed client (`supabase-js` with generated types). Never write raw SQL in application code — use Supabase query builder or a typed query layer.
-- **AI:** Vercel AI SDK (`ai` package) with `@ai-sdk/anthropic`. Stream responses where user-facing. Use Claude Sonnet 4.5 (`claude-sonnet-4-5`) as the default model unless a task specifies otherwise.
+- **AI:** Vercel AI SDK (`ai` package) with `@ai-sdk/anthropic`. Stream responses where user-facing. Use Claude Sonnet 4.6 (`claude-sonnet-4-6`) as the default model unless a task specifies otherwise.
 - **Email:** Resend. Drafts only in v1 — build toward a "send" capability but gate it behind a human click.
 - **Package manager:** pnpm. Commit `pnpm-lock.yaml`. Do not mix in npm or yarn.
 - **Environment variables:** `.env.local` for development, Vercel dashboard for production. Never commit secrets. Document every env var in `docs/setup.md`.
