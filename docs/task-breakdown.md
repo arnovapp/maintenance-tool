@@ -33,6 +33,7 @@ This is the ordered list of tasks to build v1. Agents pick tasks from the top of
 **Acceptance:** A server component can query Supabase and render a placeholder result without errors.
 
 ### T0.3 — Schema v1 migration
+@claimed: cowork-claude 2026-04-27T07:14:21Z
 Create the initial tables per `docs/prd.md` section 5:
 
 ```sql
