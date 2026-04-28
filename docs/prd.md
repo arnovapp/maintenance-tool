@@ -23,11 +23,13 @@ Each of these tasks is individually small but recurs daily. There is no existing
 **Primary goal:** Reclaim meaningful time per week from sourcing, researching, and drafting by handing those tasks to an AI agent that remembers context.
 
 **Secondary goals:**
+
 - Build durable institutional knowledge about the facility's equipment and vendor relationships
 - Create a foundation that can extend into inventory, preventive maintenance, and compliance tracking later
 - Produce a tool polished enough that it could become a commercial product if usage validates it
 
 **Non-goals for v1:**
+
 - Multi-user support
 - Mobile-native apps (responsive web is sufficient)
 - Replacing existing accounting, scheduling, or CMMS tools
@@ -42,6 +44,7 @@ Each of these tasks is individually small but recurs daily. There is no existing
 ## 4. Core user stories for v1
 
 ### Part sourcing
+
 > As a maintenance manager, I want to type or photograph a broken part, so I can quickly find suppliers, prices, and part numbers without 45 minutes of Googling.
 
 **Inputs:** Free-text description, OR photo upload (part, nameplate, model sticker)
@@ -49,6 +52,7 @@ Each of these tasks is individually small but recurs daily. There is no existing
 **Acceptance:** Under 15 seconds from submit to results; at least 3 usable results for common parts; part numbers verified against model when a model is known.
 
 ### Contractor and vendor finding
+
 > As a maintenance manager, I want to describe a job (e.g., "find local millwork shops that can do 140" solid timber countertops") and get a shortlist of viable local businesses with relevant capability.
 
 **Inputs:** Free-text job description, optional location (defaults to saved location)
@@ -56,6 +60,7 @@ Each of these tasks is individually small but recurs daily. There is no existing
 **Acceptance:** Results are genuinely local; capability evidence is pulled from their actual site, not invented; draft emails are personalized to each business, not templated.
 
 ### Vendor outreach drafting
+
 > As a maintenance manager, I want the tool to draft personalized emails for parts orders, quote requests, and follow-ups, so I can send them with one click after a quick review.
 
 **Inputs:** Natural language instruction plus context (a part search result, a vendor record, a project)
@@ -84,13 +89,13 @@ These are scaffolding. The user won't directly manage "equipment records" in v1 
 
 Measured at 30, 60, and 90 days of usage.
 
-| Metric | Baseline (pre-tool) | Target at 90 days |
-|---|---|---|
-| Hours/week on part sourcing | TBD (capture in `baseline-metrics.md`) | 50% reduction |
-| Hours/week on contractor research | TBD | 50% reduction |
-| Hours/week on vendor email drafting | TBD | 60% reduction |
-| Part searches per week | TBD | ≥ baseline (the tool should not change how often he searches, only how long it takes) |
-| Tool sessions per week | 0 | ≥ 20 (tool becomes a habit, not an occasional thing) |
+| Metric                              | Baseline (pre-tool)                    | Target at 90 days                                                                     |
+| ----------------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------- |
+| Hours/week on part sourcing         | TBD (capture in `baseline-metrics.md`) | 50% reduction                                                                         |
+| Hours/week on contractor research   | TBD                                    | 50% reduction                                                                         |
+| Hours/week on vendor email drafting | TBD                                    | 60% reduction                                                                         |
+| Part searches per week              | TBD                                    | ≥ baseline (the tool should not change how often he searches, only how long it takes) |
+| Tool sessions per week              | 0                                      | ≥ 20 (tool becomes a habit, not an occasional thing)                                  |
 
 These numbers are the fork in the road at 90 days: if they're hit, productize. If not, reassess.
 

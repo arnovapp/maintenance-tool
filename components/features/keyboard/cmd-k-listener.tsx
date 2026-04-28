@@ -29,11 +29,7 @@ export function CmdKListener() {
       const focusedIsCommandBar =
         target?.id === "command-bar-input" || target?.closest("form[role=search]");
 
-      if (
-        target &&
-        !focusedIsCommandBar &&
-        ["INPUT", "TEXTAREA"].includes(target.tagName)
-      ) {
+      if (target && !focusedIsCommandBar && ["INPUT", "TEXTAREA"].includes(target.tagName)) {
         return;
       }
 

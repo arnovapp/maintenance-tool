@@ -36,6 +36,7 @@ maintenance-tool-kickoff/
 1. **Create a new private GitHub repo.** Name it something like `maintenance-tool`. Don't initialize it with a README or .gitignore — we'll push this bundle in.
 
 2. **Unzip this bundle into a new folder, `cd` in, and:**
+
    ```
    git init
    git add .

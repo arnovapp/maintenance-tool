@@ -19,36 +19,40 @@ If you can't do a full tracking week, a 3-day tracking window is acceptable. A r
 ## Activities to track
 
 ### Part sourcing
+
 Every time you spend more than 2 minutes looking for a specific part, supplier, model number, or price.
 
-- **Baseline frequency:** How many sourcing sessions per week? ___
-- **Baseline time:** Average minutes per session? ___
-- **Baseline time total:** Total minutes/week on sourcing? ___
+- **Baseline frequency:** How many sourcing sessions per week? \_\_\_
+- **Baseline time:** Average minutes per session? \_\_\_
+- **Baseline time total:** Total minutes/week on sourcing? \_\_\_
 
 ### Contractor / vendor research
+
 Every time you're looking for a local business to do a job, get a quote, or fill a service gap.
 
-- **Baseline frequency:** How many research sessions per week? ___
-- **Baseline time:** Average minutes per session? ___
-- **Baseline time total:** Total minutes/week on contractor research? ___
+- **Baseline frequency:** How many research sessions per week? \_\_\_
+- **Baseline time:** Average minutes per session? \_\_\_
+- **Baseline time total:** Total minutes/week on contractor research? \_\_\_
 
 ### Vendor email drafting
+
 Every time you write an email to a supplier or contractor for a quote, order, follow-up, or question. Include only the time spent drafting, not the thinking time beforehand.
 
-- **Baseline frequency:** How many vendor emails per week? ___
-- **Baseline time:** Average minutes per email? ___
-- **Baseline time total:** Total minutes/week on drafting? ___
+- **Baseline frequency:** How many vendor emails per week? \_\_\_
+- **Baseline time:** Average minutes per email? \_\_\_
+- **Baseline time total:** Total minutes/week on drafting? \_\_\_
 
 ### Re-finding stuff you already found once
+
 Every time you have to search for a contact, a part number, a supplier, or a piece of info you know you've found before but can't locate.
 
-- **Baseline frequency:** How often per week does this happen? ___
-- **Baseline time lost:** Average minutes per incident? ___
-- **Baseline time total:** Total minutes/week re-finding? ___
+- **Baseline frequency:** How often per week does this happen? \_\_\_
+- **Baseline time lost:** Average minutes per incident? \_\_\_
+- **Baseline time total:** Total minutes/week re-finding? \_\_\_
 
 ### Grand total
 
-**Total time/week spent on activities the tool is meant to address:** ___ minutes (___ hours)
+**Total time/week spent on activities the tool is meant to address:** **_ minutes (_** hours)
 
 ---
 
@@ -72,10 +76,10 @@ These aren't measurable but matter for the 90-day decision.
 
 ## Date captured
 
-**Baseline week start:** ___
-**Baseline week end:** ___
-**First-usable milestone hit:** ___
-**90-day decision date:** ___
+**Baseline week start:** **\_
+**Baseline week end:** \_**
+**First-usable milestone hit:** **\_
+**90-day decision date:** \_**
 
 ---
 
@@ -83,13 +87,13 @@ These aren't measurable but matter for the 90-day decision.
 
 Fill in after 30 days of daily use. Same categories as baseline.
 
-| Activity | Baseline min/week | 30-day min/week | % change |
-|---|---|---|---|
-| Part sourcing | | | |
-| Contractor research | | | |
-| Email drafting | | | |
-| Re-finding stuff | | | |
-| **Total** | | | |
+| Activity            | Baseline min/week | 30-day min/week | % change |
+| ------------------- | ----------------- | --------------- | -------- |
+| Part sourcing       |                   |                 |          |
+| Contractor research |                   |                 |          |
+| Email drafting      |                   |                 |          |
+| Re-finding stuff    |                   |                 |          |
+| **Total**           |                   |                 |          |
 
 **What's working:**
 
@@ -101,13 +105,13 @@ Fill in after 30 days of daily use. Same categories as baseline.
 
 ## 60-day check-in
 
-| Activity | Baseline | 60-day | % change |
-|---|---|---|---|
-| Part sourcing | | | |
-| Contractor research | | | |
-| Email drafting | | | |
-| Re-finding stuff | | | |
-| **Total** | | | |
+| Activity            | Baseline | 60-day | % change |
+| ------------------- | -------- | ------ | -------- |
+| Part sourcing       |          |        |          |
+| Contractor research |          |        |          |
+| Email drafting      |          |        |          |
+| Re-finding stuff    |          |        |          |
+| **Total**           |          |        |          |
 
 **What's become habitual:**
 
@@ -119,17 +123,18 @@ Fill in after 30 days of daily use. Same categories as baseline.
 
 ## 90-day decision
 
-| Activity | Baseline | 90-day | % change |
-|---|---|---|---|
-| Part sourcing | | | |
-| Contractor research | | | |
-| Email drafting | | | |
-| Re-finding stuff | | | |
-| **Total** | | | |
+| Activity            | Baseline | 90-day | % change |
+| ------------------- | -------- | ------ | -------- |
+| Part sourcing       |          |        |          |
+| Contractor research |          |        |          |
+| Email drafting      |          |        |          |
+| Re-finding stuff    |          |        |          |
+| **Total**           |          |        |          |
 
 **Qualitative shifts:**
 
 **The decision:**
+
 - [ ] Productize — rebuild for multi-user, pitch to other maintenance managers
 - [ ] Keep as personal tool — useful to me, not productizing
 - [ ] Shelve — didn't deliver, moving on
