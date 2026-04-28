@@ -125,6 +125,8 @@ Create the initial tables per `docs/prd.md` section 5:
 
 ### T1.4 — Part sourcing: history
 
+@claimed: cowork-claude 2026-04-28T06:17:23Z
+
 - `/searches` page showing all past part searches
 - Each row: query summary, date, result count, linked equipment (if any)
 - Click a row to reopen the search view with its results
