@@ -61,9 +61,28 @@ export type PartSearchResponse = z.infer<typeof partSearchResponseSchema>;
  * Input shape for the /api/search/parts route. Kept separate from the
  * response schema so the validation surface for the API is explicit.
  */
-export const partSearchRequestSchema = z.object({
-  input_text: z.string().min(2).max(2000),
-  // image input lands in T1.2
-});
+export const partSearchRequestSchema = z
+  .object({
+    input_text: z.string().min(2).max(2000).optional(),
+    /**
+     * Storage path inside the `part-photos` bucket, e.g.
+     * "abc123.jpg". The server downloads the file via the admin
+     * client and passes it to Claude as a multimodal content part.
+     */
+    input_image_path: z
+      .string()
+      .min(1)
+      .max(200)
+      .regex(/^[a-zA-Z0-9_./-]+$/, "Invalid path")
+      .optional(),
+  })
+  .refine(
+    (v) =>
+      (v.input_text && v.input_text.length >= 2) ||
+      (v.input_image_path && v.input_image_path.length >= 1),
+    {
+      message: "Provide input_text, input_image_path, or both.",
+    },
+  );
 
 export type PartSearchRequest = z.infer<typeof partSearchRequestSchema>;
