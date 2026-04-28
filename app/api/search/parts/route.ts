@@ -74,15 +74,7 @@ export async function POST(request: Request) {
       // Best-effort persistence. Don't surface DB failures to the user.
       try {
         const supabase = createAdminClient();
-        // Note: 'public.part_search' isn't in the placeholder Database
-        // type yet (lib/db/types.ts is regenerated post-T0.3 migration).
-        // Use the untyped table accessor until generated types replace it.
-        const untyped = supabase as unknown as {
-          from: (tbl: string) => {
-            insert: (row: Record<string, unknown>) => Promise<{ error: unknown }>;
-          };
-        };
-        await untyped.from("part_search").insert({
+        await supabase.from("part_search").insert({
           input_text: parsed.data.input_text,
           results: object.results ?? [],
         });
