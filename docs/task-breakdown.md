@@ -200,6 +200,8 @@ After the week, review the annoyances log together. Fix the top 3 frictions. The
 
 ### T4.1 — Equipment browse page
 
+@claimed: cowork-claude 2026-04-28T13:12:20Z
+
 - `/equipment` listing all equipment with basic CRUD
 - Link from any search result or email draft that references it
 
