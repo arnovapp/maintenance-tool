@@ -150,6 +150,8 @@ After the week, review the annoyances log together. Fix the top 3 frictions. The
 
 ### T2.1 — Vendor data model UI
 
+@claimed: cowork-claude 2026-04-28T13:04:49Z
+
 - `/vendors` page listing all vendors
 - Create / edit / delete a vendor
 - Search and filter
