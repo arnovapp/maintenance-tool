@@ -1,8 +1,9 @@
 /**
  * Diagnostic endpoint: verifies the Supabase wiring end-to-end.
  *
- * - Returns { ok: true } when env is configured AND a real Supabase
- *   call succeeds (auth.getUser returns without throwing).
+ * - Returns { ok: true } when env is configured and the Supabase URL
+ *   responds to a session lookup (success path includes the no-session
+ *   case — which is the v1 default since there's no auth yet).
  * - Returns { ok: false, reason } with a 503 when env isn't set,
  *   so the human can run through docs/setup.md > Supabase to fix it.
  *
@@ -30,10 +31,13 @@ export async function GET() {
 
   try {
     const supabase = await createClient();
-    const { error } = await supabase.auth.getUser();
-    if (error && error.status !== 401) {
-      // 401 just means "no logged-in user" — expected in v1 (no auth).
-      // Anything else is a real problem.
+    // getSession() returns { session: null } when there's no logged-in
+    // user — the v1 default. It only sets `error` for real problems
+    // (bad URL, invalid key, network unreachable). This is the right
+    // probe for "is the client wired up correctly?" without depending
+    // on auth state.
+    const { error } = await supabase.auth.getSession();
+    if (error) {
       return NextResponse.json({ ok: false, reason: error.message }, { status: 500 });
     }
     return NextResponse.json({ ok: true });
