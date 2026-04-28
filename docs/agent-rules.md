@@ -17,7 +17,7 @@ This means:
 - Agents write code on feature branches.
 - Agents open PRs with clear descriptions.
 - The human reviews, requests changes, or merges.
-- Nothing ships to `main` without a human merge click.
+- Nothing ships to `main` without explicit human approval. The default mode is per-PR: the human clicks merge. The human may also grant class-level merge authority for a specific repo (recorded in `docs/decision-log.md`) — once granted, the agent merges its own PRs but still narrates each upcoming merge in chat so the human can intervene if anything looks wrong.
 - Nothing ships to production without a human deployment action (or a human-approved CI workflow).
 
 This is not about distrust. It's about preserving the signal that the tool is doing what the user intended, so that when something eventually goes wrong (and something will), the human is close enough to the work to recognize and correct it quickly.
@@ -37,7 +37,7 @@ This is not about distrust. It's about preserving the signal that the tool is do
 
 ## What agents cannot do without explicit human approval
 
-- Merge to `main`
+- Merge to `main` (unless class-level merge authority has been granted in `docs/decision-log.md` for this repo — see the "Agents draft, the human approves" decision)
 - Deploy to production
 - Add new dependencies (`package.json` additions) — propose in PR, human merges
 - Modify environment variables in any live environment

@@ -72,3 +72,11 @@ Format:
 **Alternatives considered:** claude-opus-4-7 (overkill and more expensive for v1 search/draft tasks).
 **Rationale:** Sonnet 4.6 is the current generation, fast enough for streaming UI, cost-appropriate for v1.
 **Revisit when:** A specific task needs more capability or cheaper cost.
+
+## 2026-04-27 — Agents may self-merge in this repo
+
+**Context:** After T0.1–T1.4 had landed via per-PR human merges, the per-PR click was producing friction without commensurate review value: PRs were small, atomic, and Daniel was reading the descriptions but not always opening the GitHub UI for the click. The friction was accumulating at a rate that obscured rather than enabled review.
+**Decision:** Agents working on `arnovapp/maintenance-tool` may merge their own PRs to `main` after Daniel's verbal grant on 2026-04-27. Each merge must still be narrated in chat before it happens so Daniel has a chance to intervene. Reverts remain possible per-PR via the GitHub UI.
+**Alternatives considered:** (a) keep per-PR human clicks (status quo, accumulating friction); (b) limit self-merge to `chore:` and `docs:` types only (more conservative, but the actual workflow showed feat/fix were equally low-stakes for v1's surface area); (c) add a GitHub MCP connector and merge via API (cleaner long-term, but blocked by the sandbox proxy not allowing api.github.com — Chrome-MCP-driven merges are the available path).
+**Rationale:** Small atomic PRs + Daniel reading descriptions in chat preserves the review signal without the per-PR click overhead. The "narrate before merging" requirement keeps Daniel in the loop without requiring action.
+**Revisit when:** A PR feels meaningfully riskier than the current cohort (architecture changes, a new dependency category, anything Daniel hasn't seen the pattern of before); or if Daniel notices regressions traceable to a PR he didn't actually read.
