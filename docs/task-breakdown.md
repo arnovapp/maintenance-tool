@@ -104,6 +104,8 @@ Create the initial tables per `docs/prd.md` section 5:
 
 ### T1.2 — Part sourcing: photo input flow
 
+@claimed: cowork-claude 2026-04-28T13:18:47Z
+
 - Add photo upload to the command bar (drag-drop, paste, or click)
 - Upload to Supabase Storage
 - API receives image URL, uses Claude vision to extract part / model / nameplate info
