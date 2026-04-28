@@ -82,6 +82,7 @@ Create the initial tables per `docs/prd.md` section 5:
 ## Phase 1: Part sourcing (the first-usable milestone)
 
 ### T1.1 — Part sourcing: text input flow
+@claimed: cowork-claude 2026-04-28T04:57:00Z
 - Build the home page command bar
 - Submit hits `/api/search/parts` with text input
 - API uses Vercel AI SDK with Claude Sonnet 4.5 to generate a structured search response
