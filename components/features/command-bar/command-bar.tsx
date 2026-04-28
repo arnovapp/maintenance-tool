@@ -71,6 +71,18 @@ export function CommandBar() {
             spellCheck={false}
             value={text}
             onChange={(e) => setText(e.target.value)}
+            onKeyDown={(e) => {
+              // Esc clears the input. If text is already empty, blur instead
+              // so the user can use Esc to escape the input entirely.
+              if (e.key === "Escape") {
+                if (text.length > 0) {
+                  e.preventDefault();
+                  setText("");
+                } else {
+                  inputRef.current?.blur();
+                }
+              }
+            }}
             placeholder={PLACEHOLDER}
             disabled={isLoading}
             className="placeholder:text-muted-foreground/70 w-full bg-transparent text-base outline-none disabled:opacity-60"
@@ -97,6 +109,30 @@ export function CommandBar() {
           </p>
         )}
       </form>
+
+      {!object && !isLoading && !error && (
+        // Empty state — design-guide: "say what to do next." A concrete
+        // example of a good first search keeps the home screen useful
+        // before the recent-searches feed has anything to show.
+        <p className="text-muted-foreground/70 text-xs">
+          Try{" "}
+          <button
+            type="button"
+            onClick={() => {
+              setText("drain pump for Hobart CL44e dishwasher");
+              inputRef.current?.focus();
+            }}
+            className="text-muted-foreground hover:text-foreground font-mono underline-offset-2 hover:underline"
+          >
+            drain pump for Hobart CL44e dishwasher
+          </button>
+          .{" "}
+          <kbd className="border-border bg-muted ml-1 inline-flex h-4 items-center rounded border px-1 font-mono text-[10px] select-none">
+            Esc
+          </kbd>{" "}
+          clears the input.
+        </p>
+      )}
 
       <PartSearchResults data={object} isLoading={isLoading} error={error} />
     </div>
