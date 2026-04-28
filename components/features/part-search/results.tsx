@@ -2,6 +2,8 @@
 
 import { ExternalLink } from "lucide-react";
 
+import { CopyablePartNumber } from "./copyable-part-number";
+
 import type { PartSearchResponse } from "@/lib/ai/part-search/schema";
 import { cn } from "@/lib/utils";
 
@@ -72,9 +74,7 @@ export function PartSearchResults({ data, isLoading, error }: PartSearchResultsP
             >
               <div className="flex min-w-0 flex-col gap-0.5">
                 <div className="flex items-center gap-2">
-                  <code className="bg-muted text-foreground rounded px-1.5 py-0.5 font-mono text-xs">
-                    {r?.part_number ?? "…"}
-                  </code>
+                  <CopyablePartNumber partNumber={r?.part_number} />
                   {r?.confidence && (
                     <span className="text-muted-foreground border-border rounded border px-1 py-0.5 font-mono text-[10px] uppercase">
                       {CONFIDENCE_LABEL[r.confidence] ?? r.confidence}
