@@ -48,9 +48,11 @@ export const partSearchResponseSchema = z.object({
     .describe("A short restatement of the search the AI performed, so the user can spot misreads."),
   results: z
     .array(partSearchResultSchema)
-    .min(0)
-    .max(8)
-    .describe("Ranked supplier options. 3–5 is the sweet spot."),
+    .describe(
+      "Ranked supplier options. Aim for 3–5 high-quality results; never more than 8. " +
+        "(Length is enforced via the system prompt — Anthropic structured output " +
+        "rejects array length constraints in the schema.)",
+    ),
 });
 
 export type PartSearchResponse = z.infer<typeof partSearchResponseSchema>;
