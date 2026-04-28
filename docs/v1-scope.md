@@ -21,6 +21,7 @@ This is the threshold where the tool starts earning its keep. Everything else in
 ## In scope for v1
 
 ### 1. Part sourcing
+
 - Text and photo input
 - AI-powered search returning 3–5 ranked supplier results
 - Display: part number, supplier, price, availability, source URL
@@ -28,23 +29,27 @@ This is the threshold where the tool starts earning its keep. Everything else in
 - Optionally link to an equipment record (created incidentally)
 
 ### 2. Contractor and vendor finding
+
 - Free-text job description input
 - Location-aware results (defaults to saved facility location)
 - Returns 3–5 local businesses with capability evidence
 - Per-result actions: save to vendors, draft outreach email
 
 ### 3. Vendor email drafting
+
 - Natural language instruction + context
 - Personalized drafts (not templated)
 - Pushed to user's Gmail Drafts folder
 - Tool maintains its own draft index for status tracking
 
 ### 4. Persistent context
+
 - Equipment records, vendor records, part search history, email drafts all stored in Supabase
 - Closing and reopening the tool preserves everything
 - Past searches can be reopened with full context
 
 ### 5. Foundational UX
+
 - Single-input "command bar" home screen
 - Top nav: Home / Searches / Equipment / Vendors / Drafts
 - Dark mode default, light mode available
@@ -52,6 +57,7 @@ This is the threshold where the tool starts earning its keep. Everything else in
 - Responsive web (works on phone in a pinch, designed for desktop)
 
 ### 6. Infrastructure
+
 - Vercel hosting, private subdomain
 - Vercel password protection
 - Supabase project (database + storage)
@@ -105,6 +111,7 @@ v1 is "done" when all of the following are true:
 The user commits to a go/no-go decision on productization **90 days after first-usable milestone is hit**.
 
 Three possible outcomes on that date:
+
 1. Productize — rebuild with auth, multi-tenancy, onboarding, and pitch to other maintenance managers.
 2. Keep as personal tool — it's useful, not productizable, leave it running.
 3. Shelve — it didn't deliver, move on.

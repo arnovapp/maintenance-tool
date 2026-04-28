@@ -48,9 +48,7 @@ export function TopNav() {
                   aria-current={active ? "page" : undefined}
                   className={cn(
                     "focus-visible:ring-ring rounded-md px-2 py-1 transition-colors focus-visible:ring-1 focus-visible:outline-none",
-                    active
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground",
+                    active ? "text-foreground" : "text-muted-foreground hover:text-foreground",
                   )}
                 >
                   {item.label}

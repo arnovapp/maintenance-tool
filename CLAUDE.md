@@ -13,7 +13,7 @@ The user is not a full-time developer. He directs the work, reviews PRs, and use
 1. **No direct commits to `main`.** Every change is a feature branch and a PR. The human reviews and merges.
 2. **No scope expansion without approval.** If a task description says "build the part sourcing flow," do not also add inventory tracking, work orders, or any other feature from the v2 backlog. Surface suggestions in the PR description, don't build them.
 3. **No new dependencies without explicit approval in the PR description.** Justify every addition. Prefer the existing stack.
-4. **No autonomous sending of emails, API calls that cost money, or external writes from the application.** v1 drafts; the user sends. This applies to the *tool being built*, not to internal dev tooling.
+4. **No autonomous sending of emails, API calls that cost money, or external writes from the application.** v1 drafts; the user sends. This applies to the _tool being built_, not to internal dev tooling.
 5. **No fake data in production code paths.** If a feature can't be demonstrated without real data, add a seed script, don't hardcode placeholders that could ship.
 6. **Preserve the approval-gate UX pattern.** Every outward action (email draft, order inquiry, quote request) shows the user what will happen before it happens. The user clicks to confirm.
 7. **TypeScript strict mode stays on.** No `any` types without a code comment explaining why.
@@ -54,7 +54,7 @@ The user is not a full-time developer. He directs the work, reviews PRs, and use
 - Server Actions for mutations where they fit; route handlers where they don't.
 - No state management library in v1. Use React state, URL state, and Supabase realtime as needed. Revisit only if pain emerges.
 - Format with Prettier, lint with ESLint. Both run pre-commit via Husky + lint-staged.
-- Comments explain *why*, not *what*. Code should be self-documenting for the *what*.
+- Comments explain _why_, not _what_. Code should be self-documenting for the _what_.
 
 ## Commit and PR conventions
 

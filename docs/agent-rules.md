@@ -13,6 +13,7 @@ The same principle that governs the app's behavior governs the agents' behavior 
 > **Agents draft. The human approves.**
 
 This means:
+
 - Agents write code on feature branches.
 - Agents open PRs with clear descriptions.
 - The human reviews, requests changes, or merges.
@@ -53,13 +54,15 @@ Any request that would require one of these actions should be surfaced in a PR d
 ## The PR workflow
 
 ### Branch naming
+
 `<type>/<short-description>`
 
 Types: `feat`, `fix`, `chore`, `docs`, `refactor`, `test`, `perf`
 Example: `feat/part-sourcing-photo-input`
 
 ### Commit messages
-Conventional commits. Present tense, imperative. Explain *why* when it's not obvious from the *what*.
+
+Conventional commits. Present tense, imperative. Explain _why_ when it's not obvious from the _what_.
 
 Good: `feat: add photo input to part sourcing form`
 Good: `fix: preserve search history after browser refresh`
@@ -94,26 +97,33 @@ Confirm this PR stays within v1 scope. If it doesn't, explain why it should be a
 ```
 
 ### PR size
+
 Small PRs ship faster and review better. Target under 400 lines of diff where possible. Break large features into sequenced PRs rather than one huge one.
 
 ### Stacked PRs are fine
+
 For large features, stack PRs (dependent branches). Describe the stack order in the PR description so the human reviews in the right sequence.
 
 ## Coordinating multiple agents
 
 ### Claim tasks before working on them
+
 The task list in `docs/task-breakdown.md` is the source of truth for what's being worked on. Before starting a task:
+
 1. Check that no one else has claimed it (look for an `@claimed` tag with a timestamp)
 2. Add a claim line to the task with your agent identifier and timestamp
 3. Open a draft PR immediately when you start coding, even if empty — this signals work in progress
 
 ### Release claims on stall
+
 If an agent hasn't made progress on a claimed task in 4 hours, another agent can release the claim and take it. The releasing agent leaves a comment explaining what was attempted.
 
 ### Don't cross streams
+
 Agents should not modify files outside their task's scope. If a task requires incidental changes to unrelated code (e.g., a utility function needs updating), open a separate PR for that change first, merge it, then continue with the main task.
 
 ### Communicate through the PR
+
 All coordination happens in PR descriptions and comments. No implicit agreements, no out-of-band coordination. If the human needs to know about a tradeoff, it goes in the PR.
 
 ## Scope enforcement
@@ -134,24 +144,31 @@ The human will decide whether to promote it into scope. Agents do not promote th
 These are patterns that have caused problems on other projects. Agents should self-check against them.
 
 ### "I'll just also..."
+
 The impulse to fix an unrelated thing while working on a task. Don't. Open a separate PR or add it to the backlog.
 
 ### Reinventing patterns
+
 Before writing a new utility or component, search the codebase for existing solutions. Reuse where reasonable.
 
 ### Premature abstraction
+
 Don't create a generic helper to handle three call sites until the third call site exists. Inline duplication is fine until it isn't.
 
 ### Over-testing or under-testing
+
 Tests follow the value of the code. Don't write tests for trivial getters. Do write tests for AI-prompt schemas, data parsing, and anything where regression would be silent.
 
 ### Hallucinating dependencies
+
 Before importing something, confirm it exists in `package.json`. Don't assume.
 
 ### Hallucinating Supabase or DB shape
+
 Always check generated types and migrations. Don't write code against a schema that doesn't exist.
 
 ### Skipping the scope check
+
 The temptation to skip the scope check on a "small" change. Don't. The scope check exists because small changes accumulate into scope creep.
 
 ## When something breaks
