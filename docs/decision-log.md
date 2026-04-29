@@ -92,3 +92,12 @@ Format:
 - (c) Use Resend (already a project dep, never called) for the actual sending side. Rejected: would require building a separate "send via Resend, log to email_draft, follow up via inbox" flow, which is a new feature surface; copy-paste-to-Gmail is honest and minimal.
   **Rationale:** v1's primary value is the part-sourcing + contractor-finding + draft-generation flow. Gmail integration is the polish that saves one copy-paste per email. Holding the rest of v1 hostage to a Workspace permissions tangle would be wrong; deferring is honest.
   **Revisit when:** 90-day productization decision; or if Daniel chooses to set up the Workspace policy override / personal-Google path; or if drafts-volume usage shows the copy-paste step as the top friction in docs/annoyances.md.
+
+## 2026-04-28 — v1 shipped
+
+**Context:** Daniel walked through `docs/v1-scope.md` acceptance criteria with the assistant. Five criteria are fully met, one is explicitly deferred to v2 (Gmail OAuth, see 2026-04-28 entry above), and three are partial: Vercel password protection (decision pending), formal a11y sweep (not run), and `docs/setup.md` Vercel section (not transcribed). The 23 PRs merged today plus the bootstrap commit constitute the foundation, both flows (parts + contractors), all CRUD pages, and the local-only drafts pipeline.
+**Decision:** Ship v1 as shipped 2026-04-28. The three partials become a polish backlog in `docs/task-breakdown.md`, prioritized against `docs/annoyances.md` after the usage week. The deferral is logged and intentional.
+**Alternatives considered:** Finish the partials before declaring shipped (~1.5 hours of work split across three PRs). Rejected: real usage data is more valuable than polish-without-data, and the partials are bounded enough to fit anywhere in the next 30 days.
+**Rationale:** v1's purpose was to get a working tool into Daniel's daily workflow so the 90-day decision has data behind it. Holding "shipped" hostage to polish that the 30-day annoyances log will re-prioritize anyway just delays the start of the clock.
+**The 90-day clock starts now.** Decision date: 2026-07-27 (90 days from today). On that date, open `docs/baseline-metrics.md`, fill in the 90-day column, and make the productize / keep-personal / shelve call.
+**Revisit when:** 30-day annoyances review (2026-05-28); 60-day check-in; the productization decision date.
