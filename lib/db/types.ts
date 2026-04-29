@@ -108,6 +108,7 @@ export type Database = {
           results: Json;
           chosen_result_id: string | null;
           equipment_id: string | null;
+          search_type: "part" | "contractor";
           created_at: string;
         };
         Insert: {
@@ -117,6 +118,7 @@ export type Database = {
           results?: Json;
           chosen_result_id?: string | null;
           equipment_id?: string | null;
+          search_type?: "part" | "contractor";
           created_at?: string;
         };
         Update: {
@@ -126,6 +128,7 @@ export type Database = {
           results?: Json;
           chosen_result_id?: string | null;
           equipment_id?: string | null;
+          search_type?: "part" | "contractor";
           created_at?: string;
         };
         Relationships: [
