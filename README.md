@@ -2,9 +2,10 @@
 
 A personal AI-powered web app for one user (the maintenance manager at a commercial spa). Replaces the mundane daily work of sourcing parts, finding contractors, and drafting vendor communications.
 
-**Status:** v1 in development
+**Status:** v1 shipped 2026-04-28
 **User count:** 1 (the builder)
-**Deployment:** Vercel, private subdomain, Vercel password protection in lieu of auth for v1
+**Deployment:** Vercel, public deployment at `maintenance-tool-six.vercel.app` (password protection deferred — see polish backlog in `docs/task-breakdown.md`)
+**90-day decision:** 2026-07-27 — see `docs/decision-log.md`
 
 ---
 

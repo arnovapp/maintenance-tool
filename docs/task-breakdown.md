@@ -229,11 +229,25 @@ After the week, review the annoyances log together. Fix the top 3 frictions. The
 
 ### T4.3 — Acceptance checklist
 
+@claimed: cowork-claude 2026-04-28T20:00:00Z
+@done: v1 shipped 2026-04-28 — see docs/v1-scope.md acceptance table
+
 - Walk through every bullet in `docs/v1-scope.md` acceptance section
 - Fix anything that doesn't meet the bar
 - Mark v1 complete
 
 ---
+
+## Polish backlog (post-v1, pre-30-day-review)
+
+These are the partials surfaced during T4.3 acceptance review. None block v1; each gets prioritized against `docs/annoyances.md` after the usage week.
+
+- **Vercel password protection (acceptance #1).** Decide: Vercel Pro password protection ($20/mo), Vercel account-based protection (free), or accept "anyone with the URL" for v1.
+- **Formal a11y sweep (acceptance #6).** Lighthouse + axe-core run on `/`, `/searches`, `/vendors`, `/equipment`, `/drafts`. Fix anything below 90 a11y score. Probably one PR.
+- **Finish `docs/setup.md` (acceptance #7).** Fill in the Vercel-deploy section from the steps already executed in chat. Trim the Resend TODO section since it's not v1 territory.
+- **Surface AI SDK errors to UI.** Long-deferred follow-up from PR #11. When `streamObject` errors mid-stream, the UI shows nothing. Should show a clear error.
+- **Migrate `next lint` to ESLint CLI.** Addresses Next 16 deprecation warning. Slightly risky — flat-config interop with `eslint-config-next` has been bumpy; do with end-to-end verification.
+- **Regenerate `lib/db/types.ts`.** Once Supabase CLI is installed locally and `supabase gen types typescript --linked > lib/db/types.ts` is run, replace the hand-written types from PR #12.
 
 ## Backlog (unclaimed, not yet scheduled)
 
