@@ -138,9 +138,9 @@ export function DraftEditor({ id, initial }: DraftEditorProps) {
       </div>
 
       <p className="text-muted-foreground/70 text-xs">
-        Once T3.1 (Gmail OAuth) lands, marking a draft &quot;sent&quot; will push it to your Gmail
-        Drafts folder for one-click send. For now this stays local — copy-paste into Gmail to
-        actually send.
+        Drafts are local-only. Copy-paste the body into Gmail to send. Direct push to Gmail Drafts
+        is deferred to v2 — see docs/decision-log.md (2026-04-28). Mark this draft &quot;sent&quot;
+        after you actually send it from Gmail to keep your /drafts list accurate.
       </p>
     </form>
   );

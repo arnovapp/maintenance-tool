@@ -80,3 +80,15 @@ Format:
 **Alternatives considered:** (a) keep per-PR human clicks (status quo, accumulating friction); (b) limit self-merge to `chore:` and `docs:` types only (more conservative, but the actual workflow showed feat/fix were equally low-stakes for v1's surface area); (c) add a GitHub MCP connector and merge via API (cleaner long-term, but blocked by the sandbox proxy not allowing api.github.com — Chrome-MCP-driven merges are the available path).
 **Rationale:** Small atomic PRs + Daniel reading descriptions in chat preserves the review signal without the per-PR click overhead. The "narrate before merging" requirement keeps Daniel in the loop without requiring action.
 **Revisit when:** A PR feels meaningfully riskier than the current cohort (architecture changes, a new dependency category, anything Daniel hasn't seen the pattern of before); or if Daniel notices regressions traceable to a PR he didn't actually read.
+
+## 2026-04-28 — Defer Phase 3 (Gmail OAuth) to v2
+
+**Context:** Daniel sat down to set up the Google Cloud OAuth credentials needed for Phase 3 (T3.1–T3.3, Gmail drafts integration). The Google Cloud Console blocked project creation under both the arnova.app Workspace organization (the user is the owner but the org policy denies `resourcemanager.projects.create`) and "No organization" (also denied — Workspace accounts are forced into their org context). Tooltip confirmed: 'You do not have the required "resourcemanager.projects.create" permission to create projects in this location.'
+**Decision:** Defer Phase 3 to v2-backlog. v1 ships with local-only drafts: the /drafts flow generates and stores drafts in the email_draft table; the user reviews/edits in /drafts/[id] and copy-pastes into Gmail to send. The acceptance criterion in v1-scope.md ("Drafts land in the user's Gmail Drafts folder") is the only one v1 won't meet — captured explicitly in the v2-backlog entry.
+**Alternatives considered:**
+
+- (a) Use a personal Google account for OAuth credentials — works fine since OAuth client ownership doesn't have to match the user-account email being authorized. Daniel chose to skip rather than introduce a personal-Gmail dependency in v1.
+- (b) Escalate Workspace admin and grant Project Creator role on the arnova.app org — also works but requires deeper Workspace policy work that's not v1-shaped.
+- (c) Use Resend (already a project dep, never called) for the actual sending side. Rejected: would require building a separate "send via Resend, log to email_draft, follow up via inbox" flow, which is a new feature surface; copy-paste-to-Gmail is honest and minimal.
+  **Rationale:** v1's primary value is the part-sourcing + contractor-finding + draft-generation flow. Gmail integration is the polish that saves one copy-paste per email. Holding the rest of v1 hostage to a Workspace permissions tangle would be wrong; deferring is honest.
+  **Revisit when:** 90-day productization decision; or if Daniel chooses to set up the Workspace policy override / personal-Google path; or if drafts-volume usage shows the copy-paste step as the top friction in docs/annoyances.md.
