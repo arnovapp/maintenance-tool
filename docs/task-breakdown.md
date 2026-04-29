@@ -161,6 +161,8 @@ After the week, review the annoyances log together. Fix the top 3 frictions. The
 
 ### T2.2 — Contractor finding: search flow
 
+@claimed: cowork-claude 2026-04-29T02:02:53Z
+
 - New input mode: "find me a contractor/business for..."
 - Location-aware search (user's saved facility location)
 - Returns 3–5 local results with: name, website, contact, capability evidence, distance
