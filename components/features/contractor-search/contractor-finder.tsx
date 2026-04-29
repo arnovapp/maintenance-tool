@@ -14,6 +14,7 @@ const PLACEHOLDER =
 export function ContractorFinder() {
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const [text, setText] = useState("");
+  const [submittedQuery, setSubmittedQuery] = useState("");
 
   const { object, submit, isLoading, error, stop } = useObject({
     api: "/api/search/contractors",
@@ -28,6 +29,7 @@ export function ContractorFinder() {
     e.preventDefault();
     const trimmed = text.trim();
     if (trimmed.length < 5) return;
+    setSubmittedQuery(trimmed);
     submit({ input_text: trimmed });
   };
 
@@ -106,7 +108,12 @@ export function ContractorFinder() {
         </p>
       )}
 
-      <ContractorSearchResults data={object} isLoading={isLoading} error={error} />
+      <ContractorSearchResults
+        data={object}
+        isLoading={isLoading}
+        error={error}
+        jobDescription={submittedQuery}
+      />
     </div>
   );
 }

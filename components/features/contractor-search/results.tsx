@@ -5,12 +5,19 @@ import { ExternalLink, Mail, Phone } from "lucide-react";
 import type { ContractorSearchResponse } from "@/lib/ai/contractor-search/schema";
 import { cn } from "@/lib/utils";
 
+import { ContractorResultActions } from "./result-actions";
+
 type DeepPartial<T> = T extends object ? { [K in keyof T]?: DeepPartial<T[K]> } : T;
 
 interface ContractorSearchResultsProps {
   data: DeepPartial<ContractorSearchResponse> | undefined;
   isLoading: boolean;
   error: Error | undefined;
+  /**
+   * Original job description from the user — needed for the email-drafting
+   * action so the prompt can reference what the user was looking for.
+   */
+  jobDescription: string;
 }
 
 const CONFIDENCE_LABEL: Record<string, string> = {
@@ -19,7 +26,12 @@ const CONFIDENCE_LABEL: Record<string, string> = {
   low: "low",
 };
 
-export function ContractorSearchResults({ data, isLoading, error }: ContractorSearchResultsProps) {
+export function ContractorSearchResults({
+  data,
+  isLoading,
+  error,
+  jobDescription,
+}: ContractorSearchResultsProps) {
   if (error) {
     return (
       <div
@@ -112,6 +124,23 @@ export function ContractorSearchResults({ data, isLoading, error }: ContractorSe
               </div>
 
               {r?.notes && <p className="text-muted-foreground/80 text-xs">{r.notes}</p>}
+
+              {r?.name && !isLoading && (
+                <ContractorResultActions
+                  result={{
+                    name: r.name,
+                    website: r.website,
+                    email: r.email,
+                    phone: r.phone,
+                    specialty: r.specialty ?? "",
+                    capability_evidence: r.capability_evidence ?? "",
+                    distance_note: r.distance_note,
+                    confidence: r.confidence,
+                    notes: r.notes,
+                  }}
+                  jobDescription={jobDescription}
+                />
+              )}
             </li>
           ))}
         </ul>
