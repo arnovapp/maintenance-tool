@@ -22,37 +22,37 @@ If you can't do a full tracking week, a 3-day tracking window is acceptable. A r
 
 Every time you spend more than 2 minutes looking for a specific part, supplier, model number, or price.
 
-- **Baseline frequency:** How many sourcing sessions per week? \_\_\_
-- **Baseline time:** Average minutes per session? \_\_\_
-- **Baseline time total:** Total minutes/week on sourcing? \_\_\_
+- **Baseline frequency:** How many sourcing sessions per week? \_5\_\_
+- **Baseline time:** Average minutes per session? \_30\_\_
+- **Baseline time total:** Total minutes/week on sourcing? \_180\_\_
 
 ### Contractor / vendor research
 
 Every time you're looking for a local business to do a job, get a quote, or fill a service gap.
 
-- **Baseline frequency:** How many research sessions per week? \_\_\_
-- **Baseline time:** Average minutes per session? \_\_\_
-- **Baseline time total:** Total minutes/week on contractor research? \_\_\_
+- **Baseline frequency:** How many research sessions per week? \_2\_\_
+- **Baseline time:** Average minutes per session? \_60\_\_
+- **Baseline time total:** Total minutes/week on contractor research? \_120\_\_
 
 ### Vendor email drafting
 
 Every time you write an email to a supplier or contractor for a quote, order, follow-up, or question. Include only the time spent drafting, not the thinking time beforehand.
 
-- **Baseline frequency:** How many vendor emails per week? \_\_\_
-- **Baseline time:** Average minutes per email? \_\_\_
-- **Baseline time total:** Total minutes/week on drafting? \_\_\_
+- **Baseline frequency:** How many vendor emails per week? \_6\_\_
+- **Baseline time:** Average minutes per email? \_10\_\_
+- **Baseline time total:** Total minutes/week on drafting? \_60\_\_
 
 ### Re-finding stuff you already found once
 
 Every time you have to search for a contact, a part number, a supplier, or a piece of info you know you've found before but can't locate.
 
-- **Baseline frequency:** How often per week does this happen? \_\_\_
-- **Baseline time lost:** Average minutes per incident? \_\_\_
-- **Baseline time total:** Total minutes/week re-finding? \_\_\_
+- **Baseline frequency:** How often per week does this happen? \_10\_\_
+- **Baseline time lost:** Average minutes per incident? \_10\_\_
+- **Baseline time total:** Total minutes/week re-finding? \_100\_\_
 
 ### Grand total
 
-**Total time/week spent on activities the tool is meant to address:** **_ minutes (_** hours)
+**Total time/week spent on activities the tool is meant to address:** **\_460 minutes (\_7.6** hours)
 
 ---
 
@@ -61,25 +61,25 @@ Every time you have to search for a contact, a part number, a supplier, or a pie
 These aren't measurable but matter for the 90-day decision.
 
 **How confident are you in your current vendor list?** (1 = I rely on memory and Googling every time, 5 = I have a reliable list I trust)
-`___ / 5`
+`___4 / 5`
 
 **How stressful is the "I can't find the part" situation when equipment is down?** (1 = calm, 5 = derails my day)
-`___ / 5`
+`___4 / 5`
 
 **How much institutional knowledge do you worry about losing if you got hit by a bus?** (1 = everything's documented, 5 = everything's in my head)
-`___ / 5`
+`___5 / 5`
 
 **What percentage of your ideal job is this low-leverage research and drafting?** (1 = almost none, 5 = most of my week)
-`___ / 5`
+`___3 / 5`
 
 ---
 
 ## Date captured
 
-**Baseline week start:** **\_
-**Baseline week end:** \_**
+**Baseline week start:** **\_April 21 2026
+**Baseline week end:** \_April 28 2026**
 **First-usable milestone hit:** **\_
-**90-day decision date:** \_**
+**90-day decision date:** \_July 28 2026**
 
 ---
 
