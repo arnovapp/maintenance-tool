@@ -170,6 +170,8 @@ After the week, review the annoyances log together. Fix the top 3 frictions. The
 
 ### T2.3 — Contractor finding: save and outreach
 
+@claimed: cowork-claude 2026-04-29T02:48:43Z
+
 - Per-result action: "save to vendors" (creates vendor record)
 - Per-result action: "draft outreach email" (generates email and saves to `email_draft`, pushes to Gmail drafts)
 
