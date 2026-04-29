@@ -129,6 +129,18 @@ Multi-step approvals if/when this becomes a multi-user tool.
 
 "Generate incident report" bundles relevant equipment history, photos, work orders, and documentation into a claim-ready PDF. High-value the day it's actually needed.
 
+### Gmail OAuth and Drafts integration (Phase 3 from task-breakdown)
+
+Originally planned as v1 Phase 3 but deferred 2026-04-28 because the arnova.app Google Workspace org policy blocks Google Cloud project creation for `daniel@arnova.app` (the `resourcemanager.projects.create` permission is denied at both the org and "No organization" levels). Picking this up requires unblocking that — either by using a separate personal Google account for the OAuth credentials (cleanest, since OAuth cred ownership doesn't have to match the eventual user-account email being authorized), or by escalating Workspace admin and granting the Project Creator role on the arnova.app org.
+
+What lands when this is unblocked:
+
+- T3.1 OAuth flow — the user clicks "Connect Gmail" once; tokens stored in Supabase.
+- T3.2 — drafts pushed directly to the user's Gmail Drafts folder; tool stores the gmail_draft_id.
+- T3.3 — /drafts inbox shows status synced with Gmail (sent / drafted / ignored).
+
+In the meantime, /drafts works as a local-only review surface: generated drafts live in the email_draft table, the user reviews + edits in /drafts/[id], then copy-pastes into Gmail to actually send.
+
 ### Multi-user / team features
 
 Second user, then roles and permissions. Required before showing to anyone outside the builder. Probably comes after productization decision at 90 days.

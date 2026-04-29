@@ -179,6 +179,16 @@ After the week, review the annoyances log together. Fix the top 3 frictions. The
 
 ## Phase 3: Vendor outreach drafting
 
+> **Phase 3 deferred to v2 (2026-04-28).** Gmail OAuth requires creating a
+> Google Cloud project, and the arnova.app Workspace organization policy
+> blocks project creation for `daniel@arnova.app` even at the org-owner
+> level. v1 ships with local-only drafts (the /drafts flow under T2.3) —
+> copy-paste into Gmail to send. See `docs/decision-log.md` entry
+> 2026-04-28 — "Defer Phase 3 (Gmail OAuth) to v2" for context. Picking
+> this back up requires either (a) a personal Google account separate from
+> arnova.app, or (b) modifying the Workspace org policy to allow
+> project-creation. Both are tractable; neither is blocking v1.
+
 ### T3.1 — Gmail OAuth integration
 
 - User connects their Google account via OAuth
