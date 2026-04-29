@@ -13,15 +13,16 @@ export const contractorSearchResultSchema = z.object({
   name: z.string().describe("Company / business name."),
   website: z
     .string()
-    .url()
     .optional()
-    .describe("Direct URL to their website. Omit if the model can't verify one."),
+    .describe(
+      "Direct URL to their website. Must be a real URL — do not invent. Omit if the model can't verify one.",
+    ),
   email: z
     .string()
-    .email()
-    .or(z.literal(""))
     .optional()
-    .describe("General contact / quotes inbox."),
+    .describe(
+      "General contact / quotes inbox. Must come from the business's own published contact info — do not invent.",
+    ),
   phone: z.string().optional().describe("Phone number, ideally with country code."),
   specialty: z
     .string()
