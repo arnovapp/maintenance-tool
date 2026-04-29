@@ -73,6 +73,14 @@ v1 has equipment records as scaffolding. v2+ fills them in with: full spec, manu
 
 On-site inventory with par levels, low-stock alerts, reorder points, supplier links. Mobile-scan-to-deplete workflow. Surfaces "you're running low on these consumables that you'll need next week."
 
+### Building → location → part hierarchy
+
+Real facilities are not flat. A spa might have multiple buildings (treatment wing, admin, mechanical), each with named locations (bistro, lobby, sauna, treatment room 4, hot-tub mechanical room). Equipment and on-hand parts belong to a specific location, not floated at the facility level. Adding a building or a location should be a low-ceremony action — type a name, save. Once the tree exists, every equipment record and every inventory entry asks "which location?" by default. Captured 2026-04-28 from real usage feedback after T1.2 photo input shipped: the user wanted to file searched parts back to where they live.
+
+### Equipment list filter by location
+
+Small polish on T4.1 once locations exist: the /equipment page gets a dropdown ("All / Bistro / Lobby / Treatment room 4 / …") that filters the list. Two-line implementation once the location data model is real. Captured 2026-04-28; deferred until the location hierarchy lands so we don't ship a dropdown that filters nothing.
+
 ### Vendor performance rating
 
 Auto-populated from quote history, response times, on-time delivery, problem rate. Surfaces preferred vendors first, flags problematic ones.
@@ -105,6 +113,10 @@ For larger purchases, send the same RFQ to multiple vendors, get responses back 
 
 After a part is ordered, track shipping, delivery, and confirm receipt. Auto-update equipment records.
 
+### Save part-search result to a location's inventory
+
+On any part-search result row, an "add to inventory" action that asks "which location?" and creates an inventory entry (part number, supplier, on-hand count starts at the quantity ordered). Closes the loop between sourcing (Bucket 4) and inventory (Bucket 3): the part you just sourced goes straight into the building/location/inventory tree without a copy-paste step. Depends on Building → location → part hierarchy and Inventory and stock tracking. Captured 2026-04-28.
+
 ### Procurement workflow
 
 Multi-step approvals if/when this becomes a multi-user tool.
@@ -120,6 +132,10 @@ Multi-step approvals if/when this becomes a multi-user tool.
 ### Multi-user / team features
 
 Second user, then roles and permissions. Required before showing to anyone outside the builder. Probably comes after productization decision at 90 days.
+
+### Per-facility branding (wordmark from the user's business name)
+
+The top-nav wordmark currently reads "Maintenance" — a deliberately neutral placeholder per design-guide. When the tool is productized for users beyond the builder, the wordmark should default to the user's facility name (e.g. "Spa Lakeshore", "Elements Hotel"), captured during the same onboarding step that records the saved facility location used by contractor finding. Falls back to "Maintenance" when no facility name is set. Pre-positions the tool to feel "yours" the moment a new user logs in. Brand tokens already isolated per design-guide section "Placeholder for Arnova branding," so this is a small swap once the multi-user / settings surface exists. Captured 2026-04-28.
 
 ### Mobile-native app
 
